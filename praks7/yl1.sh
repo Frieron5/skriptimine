@@ -19,3 +19,4 @@ else
 echo "vigane sisend"
 read vanus
 fi
+#skripti lõpp
