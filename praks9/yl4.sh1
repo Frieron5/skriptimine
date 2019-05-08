@@ -1,0 +1,14 @@
+#!/bin/bash
+#skripti algus
+echo "sisesta ridade arv"
+read rida
+for (( j = 1; j <= $rida; j++ ))
+do
+echo -n $j "."
+for (( i = $rida; i >= $j; i--))
+do
+echo -n "*"
+done
+echo " "
+done
+#skripti lõpp
