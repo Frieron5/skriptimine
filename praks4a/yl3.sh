@@ -4,14 +4,15 @@
 #
 echo -n "Palun kirjuta directory nimi, mida soovid pakkida: "
 read nimi
-#kuhu kataloog surutakse
-echo -n "kuhu soovite kataloogi: "
-read dest
-#pandke nyyd arhiivi nimi
-failinimi="backup.tar.gz"
-#tar failid mida on vaja
-tar -czf $failinimi $backup
-cp $failinimi $dest
-#väjastab infot
-echo "Sinu backup fail on surutud kokku"
+#näitab aega
+date=$(date +"%d.%m.%Y")
+aeg=$(date +"R")
+#võtame ainult baasinime
+baasinimi="$(basename -- $katalooginimi)"
+#backupi asukoht.
+asukoht="/home/user/skriptimine/praks4a/backup/$baasinimi.backup.$aeg.$date.tar.gz"
+#loob kokkupakkitud faili
+tar -zcvf $asukoht $katalooginimi
+#asukoht kus see on
+echo "kataloogi $kataloogi $kataloogi $kataloogi backup nimi on $baasnimi.backup.$aeg.$date.tar.gz ta asub $asukoht"
 #skripti lõpp
